@@ -88,5 +88,16 @@ public class RequestBodyController {
         return member.toString();
     }
 
+    @PostMapping("/v6/httpEntity")
+    @ResponseBody
+    public ResponseEntity requestBodyHttpEntityTest(HttpEntity<MemberDto> member) throws IOException {
+
+        MemberDto body = member.getBody();
+
+        return new ResponseEntity("ㅐㅏ", HttpStatus.OK); //json 반환
+    }
+
+
+
 
 }
