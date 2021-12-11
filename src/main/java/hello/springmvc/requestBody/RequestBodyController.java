@@ -83,7 +83,7 @@ public class RequestBodyController {
     @ResponseBody
     public String requestBodyStringTest(@RequestBody String member) throws IOException {
 
-        log.info(member); // txt
+        log.info(member); // txt 타입
 
         return member.toString();
     }
