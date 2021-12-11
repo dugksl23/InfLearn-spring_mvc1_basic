@@ -61,13 +61,18 @@ public class RequestHeaderController {
     }
 
     @RequestMapping("/modelAttribute")
-    public String modelAttribute(@ModelAttribute MemberDto member, Model model) {
+    public String modelAttribute(String username, Integer age, Model model) {
 
-        System.out.println("username : " + member.getUsername());
-        System.out.println("age : " + member.getAge());
+//        System.out.println("username : " + member.getUsername());
+        //System.out.println("age : " + member.getAge());
+
+        System.out.println("username : " + username);
+        System.out.println("age : " + age);
+
         model.addAttribute("model", model);
 
-        return member.toString();
+
+        return username;
     }
 
 }
