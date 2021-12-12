@@ -85,7 +85,7 @@ public class RequestBodyController {
 
         log.info(member); // txt 타입
 
-        return member.toString();
+        return "dd";
     }
 
     @PostMapping("/v6/httpEntity")
@@ -94,7 +94,7 @@ public class RequestBodyController {
 
         MemberDto body = member.getBody();
 
-        return new ResponseEntity("ㅐㅏ", HttpStatus.OK); //json 반환
+        return new ResponseEntity(body, HttpStatus.OK); //json 반환
     }
 
 
