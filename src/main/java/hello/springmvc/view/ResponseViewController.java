@@ -2,6 +2,8 @@ package hello.springmvc.view;
 
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,7 +48,18 @@ public class ResponseViewController {
     }
 
 
+    /**
+     * 반환 타입이 void일 경우에는 요청 url을 view로 반환한다.
+     * @param model
+     * @return
+     */
+    @RequestMapping("/v3")
+    public ResponseEntity responseMappingUrl(Model model) {
 
+        model.addAttribute("data", "data");
+        // -> go to index.html
+        return new ResponseEntity("dd", HttpStatus.OK);
+    }
 
 
 }
